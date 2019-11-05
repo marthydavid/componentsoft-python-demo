@@ -1,0 +1,135 @@
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-vqjf8[0m
+{"level":"warn","ts":1572976302.3691223,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572976302.3700454,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-ml5lv[0m
+{"level":"warn","ts":1572976303.6613472,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1572976303.6639998,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-marthydavid-componentsoft-pytho-wlp8s[0m
+{"level":"warn","ts":1572976318.7518458,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572976320.2970595,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/marthydavid/componentsoft-python-demo.git @ master in path /workspace/source"}
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b226bdf55a746dd36156a3499fe7685f135ff2a2,1:84fd0911fe2c49639161174d271b2485257afa48
+DEBUG: ran git fetch --unshallow origin 84fd0911fe2c49639161174d271b2485257afa48: b226bdf55a746dd36156a3499fe7685f135ff2a2: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard b226bdf55a746dd36156a3499fe7685f135ff2a2 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 84fd0911fe2c49639161174d271b2485257afa48 in 
+Merged SHA 84fd0911fe2c49639161174d271b2485257afa48 with commit message 'dummy' into base branch master
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/11/05 17:52:03 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0005] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0005] Downloading base image python:onbuild        
+2019/11/05 17:52:08 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0006] Executing 3 build triggers                   
+[36mINFO[0m[0006] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0006] Checking for cached layer docker-registry.**.jenkinsx.marthy.xyz/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+2019/11/05 17:52:09 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0006] Using caching version of cmd: RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0006] Using files from context: [/workspace/source] 
+[36mINFO[0m[0006] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0006] cmd: EXPOSE                                  
+[36mINFO[0m[0006] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0006] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0006] Taking snapshot of full filesystem...        
+[36mINFO[0m[0006] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0006] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0006] Taking snapshot of files...                  
+[36mINFO[0m[0006] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0006] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0007] Taking snapshot of files...                  
+[36mINFO[0m[0007] Using files from context: [/workspace/source] 
+[36mINFO[0m[0007] COPY . /usr/src/app                          
+[36mINFO[0m[0007] Taking snapshot of files...                  
+[36mINFO[0m[0007] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0007] COPY requirements.txt .                      
+[36mINFO[0m[0007] Taking snapshot of files...                  
+[36mINFO[0m[0007] ENV PORT 8080                                
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] EXPOSE 8080                                  
+[36mINFO[0m[0007] cmd: EXPOSE                                  
+[36mINFO[0m[0007] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] CMD ["app.py"]                               
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+2019/11/05 17:52:10 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/11/05 17:52:10 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/11/05 17:52:10 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/11/05 17:52:10 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/11/05 17:52:10 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/11/05 17:52:10 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/11/05 17:52:10 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/11/05 17:52:10 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/11/05 17:52:10 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/11/05 17:52:10 pushed blob: sha256:e6f3f0a9ed5c8b31888fb6e75633bfadc44cad8a0c4ce962ced17f649d33ce43
+2019/11/05 17:52:10 pushed blob: sha256:8a8c044e7a1606986ba148e750f95f55cc45375bd8ab606ded14d8386f8c1510
+2019/11/05 17:52:10 pushed blob: sha256:75a5ba821fa4ae3b588968593a4e113a110c9e56431851fb31416e47dd76866e
+2019/11/05 17:52:10 pushed blob: sha256:85892aec0a6dce9d7b76b89b75f573536dffc643d845eee2b5851b23993496c2
+2019/11/05 17:52:11 pushed blob: sha256:618c857a292d0b64c8db099e147fa3444e40ef65ea46ea8c6bf48503a304c60b
+2019/11/05 17:52:11 docker-registry.**.jenkinsx.marthy.xyz/marthydavid/componentsoft-python-demo:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:c1ee38714726645533ae44baed2f7486159ec0c684bcc4185c65a2c4524bfec0 size: 2385
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: docker-registry.**.jenkinsx.marthy.xyz\/*************\/componentsoft-python-demo|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-6l84t-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Commit author email is empty for: 84fd0911fe2c49639161174d271b2485257afa48
+Looking for commits in: /workspace/source/
+Found commit author match for: marthydavid with email address: marthy.david@gmail.com
+Created environment marthydavid-componentsoft-python-demo-pr-1
+Namespace **-marthydavid-componentsoft-python-demo-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: jenkinsx.marthy.xyz
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: docker-registry.**.jenkinsx.marthy.xyz/marthydavid/componentsoft-python-demo
+    tag: 0.0.0-SNAPSHOT-PR-1-1
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+
+
+Updating PipelineActivities marthydavid-componentsoft-python-demo-pr-1-1 which has status Running
+WARNING: preview application http://componentsoft-python-demo.**-marthydavid-componentsoft-python-demo-pr-1.jenkinsx.marthy.xyz not available, error was 504 504 Gateway Time-out, delaying for: 793.114244ms
+WARNING: preview application http://componentsoft-python-demo.**-marthydavid-componentsoft-python-demo-pr-1.jenkinsx.marthy.xyz not available, error was 504 504 Gateway Time-out, delaying for: 1.660880159s
+WARNING: preview application http://componentsoft-python-demo.**-marthydavid-componentsoft-python-demo-pr-1.jenkinsx.marthy.xyz not available, error was 504 504 Gateway Time-out, delaying for: 2.349350039s
+WARNING: preview application http://componentsoft-python-demo.**-marthydavid-componentsoft-python-demo-pr-1.jenkinsx.marthy.xyz not available, error was 504 504 Gateway Time-out, delaying for: 2.690253879s
+error: error checking if preview application http://componentsoft-python-demo.**-marthydavid-componentsoft-python-demo-pr-1.jenkinsx.marthy.xyz is available: preview application http://componentsoft-python-demo.**-marthydavid-componentsoft-python-demo-pr-1.jenkinsx.marthy.xyz not available, error was 504 504 Gateway Time-out
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-preview'. The execution of the pipeline has stopped.[0m
