@@ -1,0 +1,132 @@
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-7tg9p[0m
+{"level":"warn","ts":1572973472.695857,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572973472.6965075,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-9bjvf[0m
+{"level":"warn","ts":1572973473.1643255,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1572973473.1670184,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-marthydavid-componentsoft-pytho-6lnqh[0m
+{"level":"warn","ts":1572973489.2626145,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572973490.8683085,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/marthydavid/componentsoft-python-demo.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b226bdf55a746dd36156a3499fe7685f135ff2a2
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/11/05 17:04:52 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/11/05 17:04:54 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0003] Executing 3 build triggers                   
+[36mINFO[0m[0003] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0003] Checking for cached layer 10.233.58.36:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+2019/11/05 17:04:55 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0003] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0003] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0019] Taking snapshot of full filesystem...        
+[36mINFO[0m[0023] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0023] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0023] Taking snapshot of files...                  
+[36mINFO[0m[0023] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0023] cmd: /bin/sh                                 
+[36mINFO[0m[0023] args: [-c pip install --no-cache-dir -r requirements.txt] 
+You are using pip version 10.0.1, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0024] Taking snapshot of full filesystem...        
+[36mINFO[0m[0027] Pushing layer 10.233.58.36:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73 to cache now 
+[36mINFO[0m[0027] Using files from context: [/workspace/source] 
+[36mINFO[0m[0027] COPY . /usr/src/app                          
+[36mINFO[0m[0027] Taking snapshot of files...                  
+[36mINFO[0m[0027] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0027] COPY requirements.txt .                      
+[36mINFO[0m[0027] Taking snapshot of files...                  
+[36mINFO[0m[0027] ENV PORT 8080                                
+[36mINFO[0m[0027] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0027] EXPOSE 8080                                  
+[36mINFO[0m[0027] cmd: EXPOSE                                  
+[36mINFO[0m[0027] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0027] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0027] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0027] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0027] CMD ["app.py"]                               
+[36mINFO[0m[0027] No files changed in this command, skipping snapshotting. 
+2019/11/05 17:05:20 pushed blob: sha256:929ed6fd936d2648f34cb385bd5e446149ea382f9bd201433fc721e2dae22caf
+2019/11/05 17:05:20 pushed blob: sha256:68127231e9b0affbda6540e05f3020a510b6f6017ce2c51797e0ad1f05ecda60
+2019/11/05 17:05:20 10.233.58.36:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73: digest: sha256:07c406f33986a279047edfc4f3d80c136bc09a9e62bf1dba7268cd7b79046da3 size: 428
+2019/11/05 17:05:20 pushed blob: sha256:4010ee56ac7b5f313fa722d212c474c97bdb14c0d53c00b63f2bdb2f0bf2d25a
+2019/11/05 17:05:20 pushed blob: sha256:1103de0176c2585e9466400930e1d428ce813fe0e74ba76d671b303050af4bfb
+2019/11/05 17:05:20 pushed blob: sha256:3a891d8466e367b84b3252652184867c25080e0d6cdec01d10bb72aa30efc621
+2019/11/05 17:05:20 pushed blob: sha256:607f9190ce7e562e53f30ab62599b026968ddf295df167c16513fa9d31ddf148
+2019/11/05 17:05:20 pushed blob: sha256:68127231e9b0affbda6540e05f3020a510b6f6017ce2c51797e0ad1f05ecda60
+2019/11/05 17:05:20 pushed blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/11/05 17:05:21 pushed blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/11/05 17:05:21 pushed blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/11/05 17:05:21 pushed blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/11/05 17:05:23 pushed blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/11/05 17:05:23 pushed blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/11/05 17:05:25 pushed blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/11/05 17:05:25 pushed blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/11/05 17:05:28 pushed blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/11/05 17:05:28 10.233.58.36:5000/marthydavid/componentsoft-python-demo:0.0.1: digest: sha256:845508e6add3195f0095f7f979bfbc59cf278497d7bb212d3568a46bb3304dc8 size: 2385
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/componentsoft-python-demo to an unshallow repository
+Generating change log from git ref d0542ef6845b23cf87f08898ddfe2273a20bd841 => f8eca4bb702cc2b25621b05b15cad4481eec2d4e
+Associating user x-0 in users.jenkins.io with email marthy.david@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit b226bdf55a746dd36156a3499fe7685f135ff2a2 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for marthydavid/componentsoft-python-demo and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/marthydavid/componentsoft-python-demo/releases/tag/v0.0.1
+generated: /workspace/source/charts/componentsoft-python-demo/templates/release.yaml
+Created Release componentsoft-python-demo-0-0-1 resource in namespace **
+Updating PipelineActivity marthydavid-componentsoft-python-demo-master-1 with version 0.0.1
+Updated PipelineActivities marthydavid-componentsoft-python-demo-master-1 with release notes URL: https://github.com/marthydavid/componentsoft-python-demo/releases/tag/v0.0.1
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file componentsoft-python-demo-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mmarthydavid-componentsoft-pytho-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app componentsoft-python-demo version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/marthydavid/environment-shriekquark-staging/pull/1
+Added label updatebot to Pull Request https://github.com/marthydavid/environment-shriekquark-staging/pull/1
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+WARNING: Failed to query the Pull Request last commit status for https://github.com/marthydavid/environment-shriekquark-staging/pull/1 ref 49d928105e846e3552f44f02ba0cb7b1874ba27e Could not find a status for repository marthydavid/environment-shriekquark-staging with ref 49d928105e846e3552f44f02ba0cb7b1874ba27e
+Pull Request https://github.com/marthydavid/environment-shriekquark-staging/pull/1 is merged at sha cba1c05339163c894680cd2a27777a50df55de42
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names componentsoft-python-demo, **-componentsoft-python-demo, **-staging-componentsoft-python-demo
